@@ -4,10 +4,10 @@ import { environment } from '../environments/environment';
 
 @Injectable()
 export class RestService {
-    constructor(private httpClient: HttpClient) { }
-    getAllRest() {
-        return this.httpClient.get(environment.gateway + '/index');
-    }
+  constructor(private httpClient: HttpClient) { }
+  getAllRest() {
+    return this.httpClient.get(environment.gateway + '/index');
+  }
 }
 
 export class Rest {

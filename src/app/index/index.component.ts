@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestComponent } from '../rest/rest.component';
 
 @Component({
   selector: 'app-index',

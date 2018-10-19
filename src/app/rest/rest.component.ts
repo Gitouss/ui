@@ -3,6 +3,7 @@ import { RestService, Rest } from '../rest.service';
 
 @Component({
   selector: 'app-rest',
+  providers: [RestService],
   templateUrl: './rest.component.html',
   styleUrls: ['./rest.component.css']
 })
@@ -17,7 +18,7 @@ export class RestComponent implements OnInit {
   }
   getAll() {
     this.restService.getAllRest().subscribe((data: Rest[]) => {
-      this.Rests = data.filter((a) => !a.id);
+      this.Rests = data;
     });
   }
 
