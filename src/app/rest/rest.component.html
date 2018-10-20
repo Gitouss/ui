@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card-group" >
-    <div class="card" style="width: 30px;" *ngFor="let rest of Rests">
-      <img class="card-img-top" src="{{rest.image}}" alt="Card image cap">
+    <div class="card" *ngFor="let rest of Rests">
+      <img class="card-img-top" src="{{rest.image}}" alt="{{rest.name}}" style="height: 200px;">
       <div class="card-body">
         <h5 class="card-title">{{rest.name}}</h5>
       </div>
