@@ -1,52 +1,63 @@
 <div class="container">
   <div class="card-group" >
     <div class="card" style="width: 30px;" *ngFor="let rest of Rests">
-      <img class="card-img-top" src="http://www.brainelalleudcity.be/custom_storage/shop_pictures/machawibbq/machawi_bbq_brabant_wallon_20180313_8708.jpg" alt="Card image cap">
+      <img class="card-img-top" src="{{rest.image}}" alt="Card image cap">
       <div class="card-body">
         <h5 class="card-title">{{rest.name}}</h5>
-        <p class="card-text">Desc</p>
       </div>
       <ul class="list-group list-group-flush">
         <li class="list-group-item">
-          <p align="center">Service</p>
+          <p class="small text-center">Service</p>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <button class="btn btn-outline-danger" type="button" id="button-addon1">-</button>
+              <button class="btn btn-outline-danger" type="button" id="minus"><i class="fa fa-thumbs-down"></i></button>
             </div>
-            <input type="text" class="form-control" aria-describedby="button-addon1" value="1">
+            <input type="text" id="vote" class="form-control text-center" value="{{rest.quality.service}}">
             <div class="input-group-prepend">
-              <button class="btn btn-outline-primary" type="button" id="button-addon1">+</button>
+              <button class="btn btn-outline-primary" type="button" id="add"><i class="fa fa-thumbs-up"></i></button>
             </div>
           </div>
         </li>
         <li class="list-group-item">
-          <p align="center">Salle</p>
+          <p class="small text-center">Salle</p>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <button class="btn btn-outline-danger" type="button" id="button-addon1">-</button>
+              <button class="btn btn-outline-danger" type="button" id="minus"><i class="fa fa-thumbs-down"></i></button>
             </div>
-            <input type="text" class="form-control" aria-describedby="button-addon1" value="1">
+            <input type="text" id="vote" class="form-control text-center" value="{{rest.quality.salle}}">
             <div class="input-group-prepend">
-              <button class="btn btn-outline-primary" type="button" id="button-addon1">+</button>
+              <button class="btn btn-outline-primary" type="button" id="add"><i class="fa fa-thumbs-up"></i></button>
             </div>
           </div>
         </li>
         <li class="list-group-item">
-          <p align="center">Nouritures</p>
+          <p class="small text-center">Nouritures</p>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <button class="btn btn-outline-danger" type="button" id="button-addon1">-</button>
+                <button class="btn btn-outline-danger" type="button" id="minus"><i class="fa fa-thumbs-down"></i></button>
               </div>
-              <input type="text" class="form-control" aria-describedby="button-addon1" value="1">
+              <input type="text" id="vote" class="form-control text-center" value="{{rest.quality.nourriture}}">
               <div class="input-group-prepend">
-                <button class="btn btn-outline-primary" type="button" id="button-addon1">+</button>
+                <button class="btn btn-outline-primary" type="button" id="add"><i class="fa fa-thumbs-up"></i></button>
               </div>
             </div>
           </li>
         </ul>
       <div class="card-body">
-        <button type="button" class="btn btn-primary btn-lg btn-block">Vote</button>
+        <button type="button" class="btn btn-primary btn-lg btn-block">Vote <i class="fa fa-check"></i></button>
       </div>
     </div>
   </div>
 </div>
+<script>
+  $("#add").click(function () {
+    var value = 1 + parseInt($("#vote").val());
+    $("#vote").val(value);
+    console.log(value)
+  });
+  $("#minus").click(function () {
+    var value = parseInt($("#vote").val()) - 1;
+    $("#vote").val(value);
+    console.log(value)
+  });
+</script>

@@ -13,6 +13,7 @@ export class RestService {
 export class Rest {
   id:       number;
   name:     string;
+  image:    string;
   quality:  Quality;
 }
 export class Quality {
