@@ -10,54 +10,42 @@
           <p class="small text-center">Service</p>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <button class="btn btn-outline-danger" type="button" id="minus"><i class="fa fa-thumbs-down"></i></button>
+              <button class="btn btn-outline-danger" type="button" id="minus" (click)="onClickMinus(rest.id, 'voteser')"><i class="fa fa-thumbs-down"></i></button>
             </div>
-            <input type="text" id="vote" class="form-control text-center" value="{{rest.quality.service}}">
+            <input type="text" id="voteser" class="form-control text-center" value="{{rest.quality.service}}">
             <div class="input-group-prepend">
-              <button class="btn btn-outline-primary" type="button" id="add"><i class="fa fa-thumbs-up"></i></button>
+              <button class="btn btn-outline-primary" type="button" id="add" (click)="onClickAdd(rest.id, 'voteser')"><i class="fa fa-thumbs-up"></i></button>
             </div>
           </div>
         </li>
         <li class="list-group-item">
-          <p class="small text-center">Salle</p>
+          <p class="small text-center">Room</p>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <button class="btn btn-outline-danger" type="button" id="minus"><i class="fa fa-thumbs-down"></i></button>
+              <button class="btn btn-outline-danger" type="button" id="minus" (click)="onClickMinus(rest.id, 'votesal')"><i class="fa fa-thumbs-down"></i></button>
             </div>
-            <input type="text" id="vote" class="form-control text-center" value="{{rest.quality.salle}}">
+            <input type="text" id="votesal" class="form-control text-center" value="{{rest.quality.salle}}">
             <div class="input-group-prepend">
-              <button class="btn btn-outline-primary" type="button" id="add"><i class="fa fa-thumbs-up"></i></button>
+              <button class="btn btn-outline-primary" type="button" id="add" (click)="onClickAdd(rest.id, 'votesal')"><i class="fa fa-thumbs-up"></i></button>
             </div>
           </div>
         </li>
         <li class="list-group-item">
-          <p class="small text-center">Nouritures</p>
+          <p class="small text-center">Foods</p>
             <div class="input-group mb-3">
               <div class="input-group-prepend">
-                <button class="btn btn-outline-danger" type="button" id="minus"><i class="fa fa-thumbs-down"></i></button>
+                <button class="btn btn-outline-danger" type="button" id="minus" (click)="onClickMinus(rest.id, 'votenou')"><i class="fa fa-thumbs-down"></i></button>
               </div>
-              <input type="text" id="vote" class="form-control text-center" value="{{rest.quality.nourriture}}">
+              <input type="text" id="votenou" class="form-control text-center" value="{{rest.quality.nourriture}}">
               <div class="input-group-prepend">
-                <button class="btn btn-outline-primary" type="button" id="add"><i class="fa fa-thumbs-up"></i></button>
+                <button class="btn btn-outline-primary" type="button" id="add" (click)="onClickAdd(rest.id, 'votenou')"><i class="fa fa-thumbs-up"></i></button>
               </div>
             </div>
           </li>
         </ul>
       <div class="card-body">
-        <button type="button" class="btn btn-primary btn-lg btn-block">Vote <i class="fa fa-check"></i></button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" (click)="vote(rest)" onclick="window.location.reload()">Vote <i class="fa fa-check"></i></button>
       </div>
     </div>
   </div>
 </div>
-<script>
-  $("#add").click(function () {
-    var value = 1 + parseInt($("#vote").val());
-    $("#vote").val(value);
-    console.log(value)
-  });
-  $("#minus").click(function () {
-    var value = parseInt($("#vote").val()) - 1;
-    $("#vote").val(value);
-    console.log(value)
-  });
-</script>

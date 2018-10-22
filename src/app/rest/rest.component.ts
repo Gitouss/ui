@@ -21,5 +21,54 @@ export class RestComponent implements OnInit {
       this.Rests = data;
     });
   }
-
+  vote(rest:Rest) {
+    this.restService.vote(rest).subscribe(
+            data => {
+                console.log("POST ", data);
+            },
+            error => {
+                console.log("Error", error);
+            };
+    //console.log(rest);
+  }
+  onClickAdd(id, quality) {
+    switch(quality) { 
+      case "voteser": { 
+        this.Rests[id].quality.service += 1;
+        break; 
+      } 
+      case "votesal": {
+        this.Rests[id].quality.salle += 1;
+        break; 
+        }
+      case "votenou": {
+        this.Rests[id].quality.nourriture += 1;
+        break;
+      }
+      default: { 
+        console.log(id + " " + quality);
+        break; 
+      } 
+    } 
+  }
+  onClickMinus(id, quality) {
+    switch(quality) { 
+      case "voteser": { 
+        this.Rests[id].quality.service -= 1;
+        break; 
+      } 
+      case "votesal": {
+        this.Rests[id].quality.salle -= 1;
+        break; 
+        }
+      case "votenou": {
+        this.Rests[id].quality.nourriture -= 1;
+        break;
+      }
+      default: { 
+        console.log(id + " " + quality);
+        break; 
+      } 
+    } 
+  }
 }

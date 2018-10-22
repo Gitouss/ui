@@ -4,9 +4,9 @@ import { NgModule } from '@angular/core';
 import { RestComponent } from './rest/rest.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'index', pathMatch: 'full' },
-  { path: 'index', component: IndexComponent },
-  { path: 'rest', component: RestComponent}
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: IndexComponent },
+  { path: 'rest', component: RestComponent },
 ];
 
 @NgModule({
