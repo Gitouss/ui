@@ -28,7 +28,7 @@ export class RestComponent implements OnInit {
             },
             error => {
                 console.log("Error", error);
-            };
+            });
     //console.log(rest);
   }
   onClickAdd(id, quality) {
